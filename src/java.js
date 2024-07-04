@@ -53,24 +53,33 @@ function search(event) {
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${searchCity.value}&key=${apikEY}&units=metric`;
   axios.get(apiUrl).then(filter);
 }
-
+function forecasWeekDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[date.getDate()];
+}
 function displayforecast(response) {
   console.log(response.data);
-  let forecast = document.querySelector("#week-forecast");
 
-  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+  let forecast = document.querySelector("#week-forecast");
   forecastHtml = ``;
 
-  days.forEach(function (days) {
-    forecastHtml += `<div class="one-day">
-    <p class="week-forecast-date">${days}</p>
-    <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-night.png" 
+  response.data.daily.forEach(function (day, index) {
+    if (index < 5) {
+      forecastHtml += `<div class="one-day">
+    <p class="week-forecast-date">${forecasWeekDay(day.time)}</p>
+    <img src="${day.condition.icon_url}" 
     class="week-forecast-emoji">
     <p class="week-forecast-temp">
-      <span id="week-forecast-temp-max"><strong>22º</strong></span>
-      <span id="week-forecast-temp-min">16º</span>
+      <span id="week-forecast-temp-max"><strong>${Math.round(
+        day.temperature.maximum
+      )}º</strong></span>
+      <span id="week-forecast-temp-min">${Math.round(
+        day.temperature.minimum
+      )}º</span>
     </p>
   </div>`;
+    }
   });
 
   forecast.innerHTML = forecastHtml;

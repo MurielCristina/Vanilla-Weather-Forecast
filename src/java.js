@@ -48,11 +48,34 @@ function search(event) {
     filterEmoji.innerHTML = `<img src="${response.data.condition.icon_url}"data-showcase-temperature-container-emoji" />`;
     filterNow.innerHTML = currentDateAndHour;
   }
-
   let apikEY = "73050fa355794447f81ab5349190dotd";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${searchCity.value}&key=${apikEY}&units=metric`;
   axios.get(apiUrl).then(filter);
 }
 
+function displayforecast() {
+  let forecast = document.querySelector("#week-forecast");
+
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+  forecastHtml = ``;
+
+  days.forEach(function (days) {
+    forecastHtml =
+      forecastHtml +
+      `<div class="one-day">
+    <p class="week-forecast-date">Thu</p>
+    <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-night.png" 
+    class="week-forecast-emoji">
+    <p class="week-forecast-temp">
+      <span id="week-forecast-temp-max"><strong>22º</strong></span>
+      <span id="week-forecast-temp-min">16º</span>
+    </p>
+  </div>`;
+  });
+
+  forecastElements.innerHTML = forecastHtml;
+}
+
 let searchInput = document.querySelector(".form");
 searchInput.addEventListener("submit", search);
+displayforecast();

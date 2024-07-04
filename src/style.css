@@ -81,14 +81,22 @@ hr {
   border: 1px solid #bae8e8;
   opacity: 70%;
 }
-.week-forecast {
-  display: flex;
-  justify-content: space-between;
+.week-forecast-date {
   text-align: center;
 }
-.temp-max-min {
-  color: #f76b8a;
+.week-forecast-emoji {
+  display: block;
+  margin: 0 auto;
 }
+.week-forecast-temp {
+  color: #f76b8a;
+  text-align: center;
+  padding: 0 10px;
+}
+.week-forecast {
+  display: flex;
+}
+
 a {
   color: #66bfbf;
 }

@@ -1,0 +1,89 @@
+body {
+  background: #66bfbf;
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  color: #272343;
+}
+#weatherApp {
+  background-color: #fcfefe;
+  opacity: 90%;
+  margin: 60px auto;
+  width: 550px;
+  padding: 20px;
+  box-shadow: rgba(65, 50, 100, 0.08) 0px 30px 50px 0px;
+  border-radius: 16px;
+}
+h1 {
+  font-family: "Bona Nova SC", serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+}
+.form-text {
+  width: 300px;
+  height: 25px;
+  border: 1px solid #bae8e8;
+  border-radius: 8px;
+  font-size: 18px;
+  padding-left: 20px;
+  margin-left: 60px;
+}
+.form-search {
+  width: 100px;
+  height: 30px;
+  color: #272343;
+  background: #e3f6f5;
+  border: 1px solid #bae8e8;
+  border-radius: 8px;
+  font-size: 18px;
+}
+.form-search:hover {
+  cursor: pointer;
+  background: #bae8e8;
+  transition: all ease-in-out 150ms;
+}
+
+.data-showcase {
+  display: flex;
+  justify-content: space-between;
+}
+h2 {
+  font-size: 30px;
+}
+.data-showcase-temperature-container {
+  color: #272343;
+  font-size: 30px;
+  margin-top: 25px;
+  margin-right: 40px;
+  font-weight: 700;
+  display: flex;
+}
+.data-showcase-temperature-container-number {
+  font-size: 70px;
+}
+.data-showcase-temperature-container-emoji {
+  font-size: 40px;
+  margin-top: 5px;
+  margin-right: 15px;
+}
+.data-showcase-temperature-container-unit {
+  margin-top: 10px;
+}
+.climate-detail {
+  color: rgba(0, 0, 0, 0.7);
+}
+.climate-detail strong {
+  color: #f76b8a;
+}
+a {
+  color: #66bfbf;
+}
+footer {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.5);
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vanilla Weather Search / Project Setup</title>
+    <link rel="stylesheet" href="src/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <!-- ligth color palete in: https://palettes.shecodes.io/palettes/1293#palette -->
+    <!-- dark color palete in: https://palettes.shecodes.io/palettes/1551#palette -->
+    <div id="weatherApp">
+      <header>
+        <h1>Weather Search</h1>
+        <form class="form">
+          <input
+            type="text"
+            placeholder="Type a city..."
+            autocomplete="on"
+            autofocus="on"
+            class="form-text"
+            id="form-text"
+          />
+          <input type="submit" 
+          value="Search 🔎 " 
+          class="form-search"
+          id="form-search"  />
+        </form>
+      </header>
+      <main>
+        <div class="data-showcase">
+          <div>
+            <h2>Panama, Panama</h2>
+            <p class="climate-detail">
+              <span class="date-and-hour">Wednesday 19:31</span>, <span id="conditions">overcast clouds</span>
+              <br />
+              Humidity: <strong id="humidity">54%</strong>, Wind: <strong id="wind">6.17km/h</strong>
+            </p>
+          </div>
+          <div class="data-showcase-temperature-container">
+            <p>
+              <div 
+              class="data-showcase-temperature-container-emoji"
+              id="data-showcase-temperature-container-emoji">
+                <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-night.png">
+              </div>
+              <div class="data-showcase-temperature-container-number">33</div>
+              <div class="data-showcase-temperature-container-unit">ºC</div>
+            </p>
+          </div>
+        </div>
+      </main>
+      <footer>
+        Coded by
+        <a href="https://github.com/MurielCristina" target="_blank">🪷 Muri 🪷</a
+        >, is open sourced on
+        <a
+          href="https://github.com/MurielCristina/Vanilla-Weather-Search"
+          target="_blank"
+          >GitHub</a
+        >
+        and website hosted on
+        <a
+          href="https://vanilla-weather-seach-codedbymuri.netlify.app/"
+          target="_blank"
+          >Netlify</a
+        >
+      </footer>
+    </div>
+    <script src="src/java.js"></script>
+  </body>
+</html>
